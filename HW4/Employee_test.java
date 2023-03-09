@@ -8,15 +8,15 @@ package HW4;
  */
 public class Employee_test {
     public static void main(String[] args) {
-        Employee employee1 = new Employee("Susan Meyers", 47899);   // Create employee1 object
-        Employee employee2 = new Employee();   // Create employee2 object
-        Employee employee3 = new Employee("Silas Rodriguez", 81774, "Facilities", "Engineer");  // Create employee3 object
+        Employee employee1 = new Employee("Susan Meyers", 47899, "Accounting", "Vice President");   //create employee object 1
+        Employee employee2 = new Employee("Mark Jones", 39119, "IT", "Programmer"); //create employee object 2
+        Employee employee3 = new Employee("Joy Rogers", 81774, "Manufacturing", "Engineer");    //create employee object 3
         
         //print out the employee information in a pretty format
-        System.out.println(String.format("%-15s", "Name") + String.format("%-15s", "ID Number") + String.format("%-15s", "Department") + String.format("%-15s", "Position"));
-        System.out.println("------------------------------------------------------------");
-        System.out.println(String.format("%-10.10s", employee1.getName()) +"."+ String.format("%-5s", " ") + String.format("%-14d", employee1.getIdNumber()) + String.format("%-15s",employee1.getDepartment()) + String.format("%-15s",employee1.getPosition()));
-        System.out.println(String.format("%-10.10s", employee2.getName()) +"."+ String.format("%-5s", " ") + String.format("%-14d", employee2.getIdNumber()) + String.format("%-15s",employee2.getDepartment()) + String.format("%-15s",employee2.getPosition()));
-        System.out.println(String.format("%-10.10s", employee3.getName()) +"."+ String.format("%-5s", " ") + String.format("%-14d", employee3.getIdNumber()) + String.format("%-15s",employee3.getDepartment()) + String.format("%-15s",employee3.getPosition()));
+        System.out.println(String.format("%-20s", "Name") + String.format("%-15s", "ID Number") + String.format("%-15s", "Department") + String.format("%-15s", "Position"));
+        System.out.println(String.format("%-65s", "-").replace(' ', '-'));
+        System.out.println(String.format("%-15.15s", employee1.getName()) + String.format("%-5s", " ") + String.format("%-15d", employee1.getIdNumber()) + String.format("%-15s",employee1.getDepartment()) + String.format("%-15s",employee1.getPosition()));
+        System.out.println(String.format("%-15.15s", employee2.getName()) + String.format("%-5s", " ") + String.format("%-15d", employee2.getIdNumber()) + String.format("%-15s",employee2.getDepartment()) + String.format("%-15s",employee2.getPosition()));
+        System.out.println(String.format("%-15.15s", employee3.getName()) + String.format("%-5s", " ") + String.format("%-15d", employee3.getIdNumber()) + String.format("%-15s",employee3.getDepartment()) + String.format("%-15s",employee3.getPosition()));
     }
 }
