@@ -1,5 +1,3 @@
-package OOP.classes_constr;
-
 public class countable_test extends countable {
     public static void main(String [] args){
         // Create 3 objects

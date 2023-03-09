@@ -1,5 +1,3 @@
-//package Java_Programs;    //-> This is for my enviornment
-
 import java.util.Scanner;
 import java.text.MessageFormat;
 

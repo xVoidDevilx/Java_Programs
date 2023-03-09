@@ -1,5 +1,3 @@
-//package Java_Programs; //-> This is for my envinment
-
 import java.util.Scanner;
 
 public class Hw2_Rodriguez_strclass{

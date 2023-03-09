@@ -1,5 +1,3 @@
-package OOP.classes_constr;
-
 public class countable {
     // Static variable to keep track of the number of objects created
     private static int count = 0;
