@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
  * @purpose: This class contains a main method to test the Geometry class.
  */
 public class geometry_test {
-    /*main method begins execution of Java application & tests Geometry class*/
+    /* main method begins execution of Java application
+    *  & tests Geometry class
+    */
     public static void main(String[] args) {
         // create a new object of the class String to hold user response
         String response = new String();
