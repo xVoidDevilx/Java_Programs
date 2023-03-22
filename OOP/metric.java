@@ -1,5 +1,3 @@
-package OOP.classes_constr;
-
 public class metric {
     private double m, k;
     
