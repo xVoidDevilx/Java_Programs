@@ -1,3 +1,5 @@
+package OOP;
+
 //create a class object
 public class Cls_wrk{
     //this is the top method that runs when compiled

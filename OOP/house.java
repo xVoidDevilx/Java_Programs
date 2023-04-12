@@ -1,3 +1,5 @@
+package OOP;
+
 public class house {
     /*
      * main class runs on execution

@@ -1,3 +1,5 @@
+package OOP;
+
 public class metric {
     private double m, k;
     

@@ -1,3 +1,5 @@
+package OOP;
+
 import java.util.Scanner;
 //import OOP.classes_constr.metric;
 

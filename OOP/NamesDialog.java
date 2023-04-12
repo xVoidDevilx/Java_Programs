@@ -1,3 +1,5 @@
+package OOP;
+
 import javax.swing.JOptionPane;
 
 public class NamesDialog {
