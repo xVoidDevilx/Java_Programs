@@ -1,6 +1,12 @@
 package movie_rec_proj;
 import java.util.ArrayList;
 
+/**
+ * @author Silas Rodriguez, 
+ * @assignment CS2365 OOP
+ * @date 4/25/2023
+ * @purpose This class is used to create movie objects that can be added to a database and accessed by users
+ */
 public class Movie{
     //create an array list that acts as a database for all movies can be accessed by all users in the package using get_movie_list() method below -> Could be modified by a future object like "movie_database"
     protected static ArrayList<Movie> movie_list = new ArrayList<Movie>();
@@ -12,22 +18,16 @@ public class Movie{
     
     // constructor for required fields
     public Movie(String movie_name, int movie_year, char movie_rating, String movie_genre){
-        this.movie_name = movie_name;
-        this.movie_year = movie_year;
-        this.movie_rating = movie_rating;
-        this.movie_genre = movie_genre;
-        movie_list.add(this);
-    }
-
-    // constructor for all fields
-    public Movie(String movie_name, int movie_year, char movie_rating, String movie_genre, String movie_description, String movie_director){
-        this.movie_name = movie_name.toUpperCase();                 // convert to uppercase to make searching easier
+        this.movie_name = movie_name.toUpperCase(); // convert to uppercase to make searching easier
         this.movie_year = movie_year;
         this.movie_rating = Character.toUpperCase(movie_rating);    // convert to uppercase to make searching easier
-        this.movie_genre = movie_genre.toUpperCase();               // convert to uppercase to make searching easier
+        this.movie_genre = movie_genre.toUpperCase();   // convert to uppercase to make searching easier
         movie_list.add(this);
     }
-
+    public Movie (){
+        throw new IllegalArgumentException("Movie must have a name, year, rating, and genre");
+    }
+    
     // set movie name
     public void setMovieName(String movie_name){
         this.movie_name = movie_name;
@@ -72,6 +72,6 @@ public class Movie{
 
     @Override
     public String toString(){
-        return "Movie Name: " + this.movie_name + "\nMovie Year: " + this.movie_year + "\nMovie Rating: " + this.movie_rating + "\nMovie Genre: " + this.movie_genre;
+        return "Movie Name: " + this.movie_name + "\nMovie Year: " + this.movie_year + "\nMovie Rating: " + this.movie_rating + "\nMovie Genre: " + this.movie_genre + "\n";
     }
 }

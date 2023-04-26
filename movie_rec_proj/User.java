@@ -1,8 +1,7 @@
 package movie_rec_proj;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
+import javax.swing.*;
 // Rules accounts must follow: settable and gettable user name and age
 interface Account {
     // every user has a name and an age that must be set and can be retrieved
@@ -22,7 +21,9 @@ public class User implements Account {
 
     // constructor with all fields
     public User(String userName, int userAge, boolean isAdmin){
-        CreateAppropriateSubclass(userName, userAge, isAdmin);
+        this.userName = userName;
+        this.userAge = userAge;
+        this.isAdmin = isAdmin;
     }
     // constructor with only name and age
     public User(String userName, int userAge){
@@ -63,42 +64,63 @@ public class User implements Account {
     @Override
     public void callRecommendation() {
         // JAVA FX CODE HERE
+        String name;
+        String genre;
+        String rating;
+        String minYear;
+        String maxYear;
+
         // create a new recommendation object
         Recommendation rec = new Recommendation(this);
-        //create a scanner
-        Scanner input = new Scanner(System.in);
-        // ask the user for a movie
-        System.out.println("Enter a movie: ");
-        // get the movie
-        String name = input.nextLine();
-        // ask the user for a genre
-        System.out.println("Enter a genre: ");
-        // get the genre
-        String genre = input.nextLine();
-        // ask the user for a rating
-        System.out.println("Enter a rating: ");
-        // get the rating -> type char
-        char rating = input.next().charAt(0);
-        // ask the user for a min year
-        System.out.println("Enter the earliest title year of interest: ");
-        // get the min year
-        int minYear = input.nextInt();
-        //clear the buffer
-        input.nextLine();
-        // ask the user for a max year
-        System.out.println("Enter the latest title year of interest: ");
-        // get the max year
-        int maxYear = input.nextInt();
-        //clear the buffer
-        input.nextLine();
-        // close the scanner
-        input.close();
+        
+        JTextField input1 = new JTextField();
+        JTextField input2 = new JTextField();
+        JTextField input3 = new JTextField();
+        JTextField input4 = new JTextField();
+        JTextField input5 = new JTextField();
+
+        Object[] message = {
+            "Movie Name:", input1,
+            "Movie Genre:", input2,
+            "Movie Rating:", input3,
+            "Movie Min Year:", input4,
+            "Movie Max Year:", input5
+        };
+
+        int option = JOptionPane.showConfirmDialog(null, message, "Enter a search query", JOptionPane.OK_CANCEL_OPTION);
+
+        if (option == JOptionPane.OK_OPTION) {
+            name = input1.getText();
+            genre = input2.getText();
+            rating = input3.getText();
+            minYear = input4.getText();
+            maxYear = input5.getText();
+        }
+        else{
+            return;
+        }
+        
         // update the recommendation object
         rec.setQueryName(name);
         rec.setQueryGenre(genre);
-        rec.setQueryRating(rating);
-        rec.setQueryYearMin(minYear);
-        rec.setQueryYearMax(maxYear);
+        try{
+            rec.setQueryRating(rating.toCharArray()[0]);
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            rec.setQueryRating('0');
+        }
+        try {
+            rec.setQueryYearMin(Integer.parseInt(minYear));
+        }
+        catch (NumberFormatException e){
+            rec.setQueryYearMin(0);
+        }
+        try{
+            rec.setQueryYearMax(Integer.parseInt(maxYear));
+        }
+        catch (NumberFormatException e){
+            rec.setQueryYearMax(0);
+        }
         // get the recommendation
         rec.getRecommendedMovies();
         // print the recommendation
@@ -106,7 +128,7 @@ public class User implements Account {
     }
 
     // method for automatically creating a user object of the appropriate subclass
-    private User CreateAppropriateSubclass(String user_name, int user_age, boolean is_admin){
+    public static User CreateAppropriateSubclass(String user_name, int user_age, boolean is_admin){
         // if the user is an admin, create an admin object and return it -> Returns an error without uname and age
         if (is_admin){
             return new Admin(user_name, user_age);
@@ -122,6 +144,10 @@ public class User implements Account {
                 return new Senior(user_name, user_age);
             }
         }
+    }
+    // method for automatically creating a user object of the appropriate subclass
+    public static User CreateAppropriateSubclass(String user_name, int user_age){
+        return CreateAppropriateSubclass(user_name, user_age, false);
     }
 }
 
@@ -139,7 +165,7 @@ class Adult extends User{
     // constructor
     public Adult(String user_name, int user_age){
         super(user_name, user_age);
-        if (user_age < 18){
+        if (user_age < 18 || user_age >= 65){
             throw new IllegalArgumentException("Adult user must be between 18 and 64 years old.");
         }
     }

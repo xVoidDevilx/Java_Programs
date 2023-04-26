@@ -41,7 +41,7 @@ public class Recommendation {
         this.query_genre = query_genre.toUpperCase();   //convert to uppercase to make searching easier
     }
     //cannot set the caller -> This would be a security risk
-
+    
     //method for getting the query name -> used for debugging
     public String getQueryName(){
         return this.query_name;
@@ -89,7 +89,17 @@ public class Recommendation {
         // loop through the movie database
         for (Movie movie : this.MOVIE_DB){
             // check if the movie matches the query
-            if (movie.getMovieName().contains(this.query_name) || (movie.getMovieYear() >= this.query_year_min && movie.getMovieYear() <= this.query_year_max) || movie.getMovieRating() == this.query_rating || movie.getMovieGenre().contains(this.query_genre)){
+            if ((movie.getMovieName().contains(this.query_name) && this.query_name.length()>0) || (this.query_genre.length()>0 && movie.getMovieGenre().contains(this.query_genre)) || (movie.getMovieRating() == this.query_rating)){
+                // add the movie to the recommended movies list
+                System.out.println("Movie matches query | " + movie.getMovieName());
+                this.add_recommendation(movie);
+            }
+            // check for variation in year submission only max or only min submitted
+            else if (this.query_year_min == 0 && movie.getMovieYear() <= this.query_year_max){
+                // add the movie to the recommended movies list
+                this.add_recommendation(movie);
+            }
+            else if (this.query_year_max == 0 && movie.getMovieYear() >= this.query_year_min){
                 // add the movie to the recommended movies list
                 this.add_recommendation(movie);
             }
@@ -99,8 +109,10 @@ public class Recommendation {
             this.recommended_movies = this.MOVIE_DB;  // if no movies match the query, recommend all movies
         }
         //check if the user class has permissions to view the recommended movies
+        ArrayList<Movie> copy = new ArrayList<Movie>(this.recommended_movies); // create a copy of the recommended movies list
+
         if (this.caller instanceof Child){
-            for (Movie movie : this.recommended_movies){
+            for (Movie movie : copy){
                 if (movie.getMovieRating() == 'R' || movie.getMovieRating() == 'M' || movie.getMovieRating() == 'X'){
                     this.remove_recommendation(movie); // remove the movie from the recommended movies list if the user is a child and the movie is rated R
                 }
