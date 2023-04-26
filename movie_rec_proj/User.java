@@ -142,7 +142,7 @@ public class User implements Account {
         rec.setQueryGenre(genre);
         // try to set the rating, if the user enters an invalid rating, set the rating to 0
         try{
-            rec.setQueryRating(rating.toCharArray()[0]);
+            rec.setQueryRating(Character.toUpperCase(rating.toCharArray()[0])); // convert the rating to uppercase and get the first character for comparison
         }
         catch (ArrayIndexOutOfBoundsException e){
             rec.setQueryRating('0');
