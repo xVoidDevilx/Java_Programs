@@ -3,13 +3,11 @@
 ## Windows - NO IDE REQUIRED or USED
 
 > Install Java JDK
-    Using your preferred web browser, navigate to the [Oracle Java Downloads page]: 
+    Using your preferred web browser, navigate to the [Oracle Java Downloads page](https://www.oracle.com/java/technologies/downloads/#jdk17-windows): 
     
     On the Downloads page, click the x64 Installer download link under the Windows category. At the time of writing this article, Java version 17 is the latest long-term support Java version.
     
     Double-click the downloaded file to start the installation. _> Follow the installation wizard with default or advanced settings, if you customize, be aware this guide may require changes.
-
-    [Oracle Java Downloads page]: https://www.oracle.com/java/technologies/downloads/#jdk17-windows
 
 > Add Java to system variables
     1. Open the Start menu and search for environment variables.
@@ -56,7 +54,7 @@
 
     2. Enter `java movie_rec_proj/Test` without the '`' character
 
-    
+
 ## MAC OS - NO IDE REQURIED or USED
 
 ### Install Brew, Java, and git
