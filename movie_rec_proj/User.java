@@ -97,7 +97,6 @@ public class User implements Account {
      */
     @Override
     public void callRecommendation() {
-        // JAVA FX CODE HERE -- THIS IS JUST A PLACEHOLDER if we decide to use JavaFX
         String name;    // name of the movie
         String genre;   // genre of the movie
         String rating;  // rating of the movie
