@@ -2,7 +2,35 @@
 
 ## Windows
 
-## MAC OS
+## MAC OS - NO IDE REQURIED or USED
+
+### Install Java and git
+
+`brew install java`
+
+`brew install git`
+
+`git clone https://github.com/XxDevilsCloverxX/Java_Programs.git`
+
+`cd Java_Programs/`
+
+### Verify install
+`java -version`
+
+> java version "19.0.2" 2023-01-17
+>
+> Java(TM) SE Runtime Environment (build 19.0.2+7-44)
+>
+> Java HotSpot(TM) 64-Bit Server VM (build 19.0.2+7-44, mixed mode, sharing)
+
+`javac -version`
+
+> javac 19.0.2
+
+### Compile and run
+`javac movie_rec_proj/*.java`
+
+`java movie_rec_proj/Test`
 
 ## Linux (Debian based) - Ubuntu, Mint, etc. see below for other distros - NO IDE REQURIED or USED
 
