@@ -136,19 +136,16 @@ public class Recommendation {
             // check if the movie matches the query if a full query is submitted
             if ((movie.getMovieName().contains(this.query_name) && this.query_name.length()>0) || (this.query_genre.length()>0 && movie.getMovieGenre().contains(this.query_genre)) || (movie.getMovieRating() == this.query_rating)){
                 // add the movie to the recommended movies list
-                System.out.println("Movie matches query | " + movie.getMovieName());
                 this.add_recommendation(movie);
             }
             // check for variation in year submission only max submitted
             else if (this.query_year_min == 0 && movie.getMovieYear() <= this.query_year_max){
                 // add the movie to the recommended movies list
-                System.out.println("Movie matches max year | " + movie.getMovieName());
                 this.add_recommendation(movie);
             }
             // check for variation in year submission only min submitted
             else if (this.query_year_max == 0 && movie.getMovieYear() > this.query_year_min && this.query_year_min > 0){
                 // add the movie to the recommended movies list
-                System.out.println("Movie matches min year | " + movie.getMovieName());
                 this.add_recommendation(movie);
             }
         }
