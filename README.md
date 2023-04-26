@@ -4,7 +4,9 @@
 
 ## MAC OS - NO IDE REQURIED or USED
 
-### Install Java and git
+### Install Brew, Java, and git
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 `brew install java`
 
