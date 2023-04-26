@@ -1,16 +1,17 @@
 package movie_rec_proj;
 import java.util.*;
 
+import javax.swing.JOptionPane;
 public class Test {
-    private static void TestUserQuery(User obj, Scanner input) {
+    private static void TestUserQuery(User obj) {
         while(true){
             obj.callRecommendation();
-            System.out.println("Would you like to search again? y/n default: n");
-            String response = input.nextLine();
-            if (response.equals("y")){
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Would you like to continue filtering?", "Please Confirm Action", JOptionPane.YES_NO_OPTION);
+            if(dialogResult == JOptionPane.YES_OPTION){
+                // The user clicked Yes button
                 continue;
-            }
-            else{
+            } else {
+                // The user clicked No button or closed the dialog
                 break;
             }
         }
@@ -24,9 +25,6 @@ public class Test {
         User user3 = User.CreateAppropriateSubclass("Katrina", 17);
         User user4 = User.CreateAppropriateSubclass("Derek", 37, true);
         
-        // create scanner
-        Scanner input = new Scanner(System.in);
-
         // add users to array
         users[0] = user1;
         users[1] = user2;
@@ -77,11 +75,10 @@ public class Test {
             finally{
                 // demo user1 (adult user) querying a recommendation
                 System.out.println("Demoing user1 (adult user) querying a recommendation:");
-                TestUserQuery(user1, input);
+                TestUserQuery(user1);
                 // demo user3 (child user) querying a recommendation
                 System.out.println("Demoing user3 (child user) querying a recommendation:");
-                TestUserQuery(user3, input);
-                input.close();
+                TestUserQuery(user3);
             }
         }
     }

@@ -1,5 +1,7 @@
 package movie_rec_proj;
 import java.util.ArrayList; // import the ArrayList class for dynamic lists of movies to be recommended to the user
+
+import javax.swing.*;
 /**
  * @authors Silas Rodriguez, Katrina Hellmann, Michael Gibich
  * @assignment CS 2365 OOP
@@ -178,9 +180,20 @@ public class Recommendation {
     public void printRecommendedMovies(){
         // first line print
         System.out.println("Recommended Movies:");
+        // String to concatenate the recommended movies list
+        String message = "";
         // loop through the recommended movies list and print each movie using the toString method
         for (Movie movie : this.recommended_movies){
             System.out.println(movie.toString());
+            message = message + movie.toString() + "\n";
         }
+        // log the event
+        JTextArea textArea = new JTextArea(message);
+        textArea.setEditable(false);    // set the text area to be uneditable
+        textArea.setLineWrap(true);    // set the text area to wrap lines
+        textArea.setWrapStyleWord(true);    // set the text area to wrap at word boundaries
+        JScrollPane scrollPane = new JScrollPane(textArea);   // create a scroll pane for the text area
+
+        JOptionPane.showMessageDialog(null, scrollPane, String.format("Your Recommended Movie List (%d)", this.recommended_movies.size()), JOptionPane.INFORMATION_MESSAGE);   // display the scroll pane in a message dialog
     }
 }
