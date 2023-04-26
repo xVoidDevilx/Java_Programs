@@ -1,5 +1,4 @@
 package movie_rec_proj;
-import java.util.*;
 
 import javax.swing.JOptionPane;
 public class Test {
