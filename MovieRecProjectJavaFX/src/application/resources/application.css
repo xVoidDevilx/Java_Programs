@@ -1,0 +1,60 @@
+/* Set background color for StackPane */
+.stack-pane {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Set font and padding for all buttons */
+.button {
+    -fx-font-family: "Arial";
+    -fx-padding: 10px;
+}
+
+/* Set style for primary button */
+.primary-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+/* Set style for secondary button */
+.secondary-button {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+/* Set style for confirm dialog */
+.dialog-pane .dialog-header {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .content .label {
+    -fx-font-size: 14px;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #4CAF50;
+    -fx-text-fill: #4CAF50;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+/* Set style for textfield */
+.textfield-style {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Set style for label */
+.label-style {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-padding: 5px;
+}
