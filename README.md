@@ -289,7 +289,7 @@ or
 
 `java --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml movie_rec_proj/Test`
 
-## JavaFX with Windows and Eclipse
+## JavaFX with Windows/Mac and Eclipse
 
 1. Launch Eclipse
 
@@ -336,3 +336,16 @@ or
 22. Click on Main.java
 
 23. Click on the run button at the top of the window
+
+## Footnotes
+
+1. JavaFX is optional and not required to run the program
+
+2. The program will run in the terminal without JavaFX
+
+3. The program will run in the terminal with JavaFX if the JavaFX libraries are added to the classpath
+
+4. The program will run in VS Code with JavaFX if the JavaFX libraries are added to the classpath
+
+5. Java swing is supported in OpenJDK 11 and later and is 
+required in the program to display the GUI in the non-JavaFX version
