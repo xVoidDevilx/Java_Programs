@@ -202,3 +202,137 @@ or
 1. Open the Test.java file
     
 2. Click on the run icon on the left side of the window *or* Click on the run button at the top of the window
+
+
+## JavaFX with Linux
+
+### Change JDK to OpenJDK 8
+>JavaFX is not supported in OpenJDK 11 or later
+1. Go to this [website](https://docs.oracle.com/javase/8/docs/technotes/guides/install/linux_jdk.html)
+
+2. Download the tar.gz file for Linux x64
+
+3. Extract the file
+
+4. Move the extracted folder to /usr/lib/jvm
+
+5. Open a terminal and run
+
+`sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.8.0_301/bin/java" 1`
+
+`sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.8.0_301/bin/javac" 1`
+
+`sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.8.0_301/bin/javaws" 1`
+
+`sudo update-alternatives --install "/usr/bin/jar" "jar" "/usr/lib/jvm/jdk1.8.0_301/bin/jar" 1`
+
+`sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_301/bin/java`
+
+`sudo update-alternatives --set javac /usr/lib/jvm/jdk1.8.0_301/bin/javac`
+
+`sudo update-alternatives --set javaws /usr/lib/jvm/jdk1.8.0_301/bin/javaws`
+
+`sudo update-alternatives --set jar /usr/lib/jvm/jdk1.8.0_301/bin/jar`
+
+6. Verify install
+
+`java -version`
+
+> java version "1.8.0_301"
+
+> Java(TM) SE Runtime Environment (build 1.8.0_301-b09)
+
+> Java HotSpot(TM) 64-Bit Server VM (build 25.301-b09, mixed mode)
+
+`javac -version`
+
+> javac 1.8.0_301
+### Install JavaFX
+
+1. Go to this [website](https://gluonhq.com/products/javafx/)
+
+2. Download the Linux SDK
+
+3. Extract the file
+
+4. Move the extracted folder to /usr/lib/jvm
+
+5. Open a terminal and run
+
+`sudo update-alternatives --install "/usr/bin/javafxpackager" "javafxpackager" "/usr/lib/jvm/javafx-sdk-`
+
+>11.0.2/bin/javafxpackager" 1`
+
+`sudo update-alternatives --install "/usr/bin/javapackager" "javapackager" "/usr/lib/jvm/javafx-sdk-`
+
+>11.0.2/bin/javapackager" 1`
+
+`sudo update-alternatives --set javafxpackager /usr/lib/jvm/javafx-sdk-11.0.2/bin/javafxpackager`
+
+`sudo update-alternatives --set javapackager /usr/lib/jvm/javafx-sdk-11.0.2/bin/javapackager`
+
+6. Verify install
+
+`javafxpackager -version`
+
+>javafxpackager 11.0.2
+
+`javapackager -version`
+
+>javapackager 11.0.2
+
+### Compile and run
+
+1. Open a terminal and run
+
+`javac --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml movie_rec_proj/*.java`
+
+`java --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml movie_rec_proj/Test`
+
+## JavaFX with Windows and Eclipse
+
+1. Launch Eclipse
+
+2. Click on Help > Install New Software
+
+3. Click on Add
+
+4. Enter e(fx)clipse in the Name field
+
+5. Enter http://download.eclipse.org/efxclipse/updates-released/3.0.0/site in the Location field
+
+6. Click on Add
+
+7. Click on Install
+
+8. Click on Next
+
+9. Click on Next
+
+10. Click on I accept the terms of the license agreement
+
+11. Click on Finish
+
+12. Click on Yes
+
+13. Click on Restart Now
+
+14. Click on File > New > Other
+
+15. Click on JavaFX Project
+
+16. Click on Next
+
+17. Enter movie_rec_proj in the Project name field
+
+18. Click on Finish
+
+19. Click on the arrow next to movie_rec_proj
+
+20. Click on the arrow next to src
+
+21. Click on application
+
+22. Click on Main.java
+
+23. Click on the run button at the top of the window
