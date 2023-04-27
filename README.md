@@ -293,49 +293,29 @@ or
 
 1. Launch Eclipse
 
-2. Click on Help > Install New Software
+2. Click on Help > Eclipse Marketplace
 
-3. Click on Add
+3. Enter e(fx)clipse in the Name field
 
-4. Enter e(fx)clipse in the Name field
+4. Download the JavaFX SDK (Standard development kit) from the following website: https://openjfx.io/
 
-5. Enter http://download.eclipse.org/efxclipse/updates-released/3.0.0/site in the Location field
+5. Navigate to Windows -> Preferences
 
-6. Click on Add
+6. Click on User Libraries -> New
 
-7. Click on Install
+7. Enter JavaFX in the popup box.
 
-8. Click on Next
+8. Hit Apply & Close.
 
-9. Click on Next
+9. Right click on the project and select Build Path --> Configure Build Path. 
 
-10. Click on I accept the terms of the license agreement
+10. Click on Module Path -> Add Library -> User Library and then tick JavaFX. 
 
-11. Click on Finish
+11. Click Apply & Close. 
 
-12. Click on Yes
+12. Click run in Eclipse.
 
-13. Click on Restart Now
-
-14. Click on File > New > Other
-
-15. Click on JavaFX Project
-
-16. Click on Next
-
-17. Enter movie_rec_proj in the Project name field
-
-18. Click on Finish
-
-19. Click on the arrow next to movie_rec_proj
-
-20. Click on the arrow next to src
-
-21. Click on application
-
-22. Click on Main.java
-
-23. Click on the run button at the top of the window
+13. If the zip file was not extracted and the individual Java files are ran, then the resources --> application.css file must be added to the datapath as well following the same process as the other libraries. 
 
 ## Footnotes
 
